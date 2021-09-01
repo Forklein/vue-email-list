@@ -6,6 +6,7 @@ const root = new Vue({
     data: {
         test: 'Ciao Vue',
         emails: [],
+        error: false,
     },
     methods: {
         getEmail(arr) {
@@ -16,7 +17,7 @@ const root = new Vue({
                     arr.push(currentEmail);
                 })
                 .catch((err) => {
-                    console.log(err)
+                    this.error = true;
                 })
         },
     },
